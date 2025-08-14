@@ -120,6 +120,11 @@
             bindings = <&mo 4>;
             key-positions = <39 41>;
         };
+
+        layer4_by_spaces {
+            bindings = <&mo 4>;
+            key-positions = <40 41>;
+        };
     };
 
     keymap {
