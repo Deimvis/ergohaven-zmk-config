@@ -6,6 +6,15 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
+    macros {
+        text__homedir: text__homedir {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp TILDE &kp FSLH>;
+            label = "TEXT__HOMEDIR";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
