@@ -125,6 +125,34 @@
 
             label = "ITERM2__SHOW_WINDOW";
         };
+
+        move_word_backward: move_word_back {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp LEFT_ARROW>,
+                <&macro_release>,
+                <&kp LALT>;
+
+            label = "MOVE_WORD_BACK";
+        };
+
+        move_word_forward: move_word_forward {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp RIGHT_ARROW>,
+                <&macro_release>,
+                <&kp LALT>;
+
+            label = "MOVE_WORD_FORWARD";
+        };
     };
 
     combos {
@@ -157,10 +185,10 @@
 
         nav {
             bindings = <
-&trans  &trans                &trans              &kp UP_ARROW  &trans               &trans                       &kp PAGE_UP      &kp N7        &kp N8        &kp N9        &trans     &trans
-&trans  &iterm2__show_window  &kp LEFT            &kp DOWN      &kp RIGHT            &trans                       &kp PAGE_DOWN    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans     &trans
-&trans  &mkp LCLK             &kp LG(LEFT_ARROW)  &kp CAPSLOCK  &kp LG(RIGHT_ARROW)  &kp DELETE                   &kp PRINTSCREEN  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &mkp RCLK  &trans
-                              &trans              &trans        &trans               &trans      &trans    &none  &mo 3            &trans        &kp NUMBER_0  &trans
+&trans  &trans                &move_word_backward  &kp UP_ARROW  &move_word_forward   &trans                       &kp PAGE_UP      &kp N7        &kp N8        &kp N9        &trans     &trans
+&trans  &iterm2__show_window  &kp LEFT             &kp DOWN      &kp RIGHT            &trans                       &kp PAGE_DOWN    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &trans     &trans
+&trans  &mkp LCLK             &kp LG(LEFT_ARROW)   &kp CAPSLOCK  &kp LG(RIGHT_ARROW)  &kp DELETE                   &kp PRINTSCREEN  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &mkp RCLK  &trans
+                              &trans               &trans        &trans               &trans      &trans    &none  &mo 3            &trans        &kp NUMBER_0  &trans
             >;
 
             display-name = "Navigation";
